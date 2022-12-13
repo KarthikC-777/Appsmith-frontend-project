@@ -1,0 +1,16 @@
+{
+  "unpublishedCollection": {
+    "name": "JSObject1",
+    "pageId": "reset-password-page",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tresetFunction: async () => {\n\treturn Reset_password_Api.run()\n\t\t.then(data=>{\n\t\tshowAlert(data.message,'success')\n\t\tclearStore()\n\t\tnavigateTo('StartingPage')\n\t})\n\t\t.catch(error=>{\n\t\tif(Reset_password_Api.data.message===undefined){\n\t\t\t \t\t\tshowAlert('Too many attempts, SignIn after sometimes','warning')\n\t\t\t\t\t\tnavigateTo('StartingPage')\n\t\t\t }\n\t\t\t else\n\t\t\t \t\t\tshowAlert(`${Reset_password_Api.data.message}`,'error')\n\t})\n\t}\n}",
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "reset-password-page_JSObject1",
+  "deleted": false,
+  "gitSyncId": "63888d562913ba43778b4636_63897994a39c830902348c9a"
+}

@@ -1,0 +1,16 @@
+{
+  "unpublishedCollection": {
+    "name": "JSObject1",
+    "pageId": "UserDashBoard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tuserSignIn:}",
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "UserDashBoard_JSObject1",
+  "deleted": false,
+  "gitSyncId": "63888d562913ba43778b4636_638a1f652913ba43778b6831"
+}

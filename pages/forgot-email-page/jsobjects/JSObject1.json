@@ -1,0 +1,16 @@
+{
+  "unpublishedCollection": {
+    "name": "JSObject1",
+    "pageId": "forgot-email-page",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tforgotFunction: async () => {\n\t\treturn forgot_email_Api.run()\n\t\t.then(data=>{\n\t\t\tshowAlert(`Sent Password reset link to ${data.accepted[0]}` ,'success')\n\t\t\tstoreValue('email',Input1.text)\n\t\t})\n\t\t.catch(error=>{\n\t\t\t if(forgot_email_Api.data.message===undefined){\n\t\t\t \t\t\tshowAlert('Too many attempts, SignIn after sometimes','warning')\n\t\t\t\t\t\tnavigateTo('StartingPage')\n\t\t\t }\n\t\t\t else\n\t\t\t \t\t\tshowAlert(`${forgot_email_Api.data.message}`,'error')\n\t})\n}\n}\n",
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "forgot-email-page_JSObject1",
+  "deleted": false,
+  "gitSyncId": "63888d562913ba43778b4636_63896854b3fbc9369c46019b"
+}

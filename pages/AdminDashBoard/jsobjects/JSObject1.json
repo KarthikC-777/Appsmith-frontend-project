@@ -1,0 +1,16 @@
+{
+  "unpublishedCollection": {
+    "name": "JSObject1",
+    "pageId": "AdminDashBoard",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tsignUp: async () => {\n\t\treturn SignUp.run()\n\t\t.then(data=>{\n\t\t\tshowAlert(data.meassage,'success')\n\t\t\tcloseModal(Modal1)\n\t\t})\n\t\t.catch(error=>{\n\t\tif(SignUp.data.message===undefined){\n\t\t\t \t\t\tshowAlert('Too many attempts, SignIn after sometimes','warning')\n\t\t\t\t\t\tnavigateTo('StartingPage')\n\t\t\t }\n\t\t\t else\n\t\t\t \t\t\tshowAlert(SignUp.data.message,'error')\n\t\t})\n\t}\n\n}",
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "AdminDashBoard_JSObject1",
+  "deleted": false,
+  "gitSyncId": "63873ac09956db2c13d0a21b_638778ac9956db2c13d0a9ef"
+}

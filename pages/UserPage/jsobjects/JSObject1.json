@@ -1,0 +1,16 @@
+{
+  "unpublishedCollection": {
+    "name": "JSObject1",
+    "pageId": "UserPage",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "actions": [],
+    "archivedActions": [],
+    "body": "export default {\n\tuserSignIn: async () => {\n\t\treturn User_Login.run()\n\t\t.then(data=>{\n\t\t\tstoreValue('role',data.result[0].userInfo.role)\n\t\t\tstoreValue('image',data.result[0].userInfo.image)\n\t\t\tdelete data.result[0].userInfo\n\t\t\tObject.keys(data.result[0]).forEach(i=>{\n\t\t\t\tstoreValue(i,data.result[0][i])\n\t\t\t})\n\t\t\tshowAlert(data.message,'success')\n\t\t\tnavigateTo('UserDashBoard')\n\t\t\t})\n\t\t.catch(error=>{\n\t\t\t if(User_Login.data.message===undefined){\n\t\t\t \t\t\tshowAlert('Too many attempts, SignIn after sometimes','warning')\n\t\t\t\t\t\tnavigateTo('StartingPage')\n\t\t\t }\n\t\t\t else\n\t\t\t \t\t\tshowAlert(`${User_Login.data.message}`,'error')\n\t\t\t//showAlert(`message:${User_Login.data.message}Status Code:${User_Login.data.statusCode}`,'warning')\n\t\t})\n}\n}",
+    "variables": [],
+    "userPermissions": []
+  },
+  "id": "UserPage_JSObject1",
+  "deleted": false,
+  "gitSyncId": "63873ac09956db2c13d0a21b_63873ac09956db2c13d0a236"
+}
